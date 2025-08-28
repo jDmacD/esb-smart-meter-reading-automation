@@ -27,7 +27,13 @@ import click
               is_flag=True,
               default=False,
               help='Enable debug mode output [env: ESB_DEBUG]')
-def main(mprn, username, password, debug):
+@click.option('--output',
+              envvar='ESB_OUTPUT',
+              type=click.Choice(['json', 'csv'], case_sensitive=False),
+              default='json',
+              help='Output format (json or csv) [env: ESB_OUTPUT]')
+
+def main(mprn, username, password, debug, output):
     """ESB Networks Smart Meter Reader Script.
     
     This script fetches smart meter readings from ESB Networks customer portal.
@@ -449,9 +455,11 @@ def main(mprn, username, password, debug):
 
     ###### END OF SCRIPT ###### 
 
-    ###/ Select file format of your choice /###
-    #print(csv_file)
-    print(json_file)
+    ###/ Output in selected format /###
+    if output.lower() == 'json':
+        print(json_file)
+    else:  # csv
+        print(csv_file)
 
 if __name__ == '__main__':
     main()
