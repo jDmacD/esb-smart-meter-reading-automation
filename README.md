@@ -49,6 +49,7 @@ debug_mode=False
   
 
 ## UPDATES: <br>
+* 28-Aug-2025 -- It seems there is some "User Agent" version validation on the server side, script fails when trying to connect with old/outdated "User Agent". Script code updated to use the latest agent. If you run into issues/errors - try to update the "User Agent" string and see if this resolves the error.
 * 04-Jan-2025 -- Reworked login and file download proccess due to Nov'24 portal changes.
 * 24-Jul-2024 -- Python script changes to accomodate ESB Networks user portal changes to download historic usage file. 
 * 09-May-2024 -- there was some changes on ESB side and this broke CSV parsing in script, fixed & tested, JSON output works as expected.
