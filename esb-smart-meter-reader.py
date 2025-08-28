@@ -17,9 +17,11 @@ if debug_mode:print("##### REQUEST 1 -- GET [https://myaccount.esbnetworks.ie/] 
 meter_mprn = "mprn_number"
 esb_user_name = "email@email.com"
 esb_password = "password"
+user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+
 session = requests.Session()
 session.headers.update({
-    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0',
+    'User-Agent': user_agent,
 })    
 
 try:
@@ -73,7 +75,7 @@ request_2_response = session.post(
     },
     headers={
       'x-csrf-token': x_csrf_token,
-      'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0',
+      'User-Agent': user_agent,
       'Accept': 'application/json, text/javascript, */*; q=0.01',
       'Accept-Language': 'en-US,en;q=0.5',
       'Accept-Encoding': 'gzip, deflate, br',
@@ -112,7 +114,7 @@ request_3_response = session.get(
       'p': 'B2C_1A_signup_signin',
     },
     headers={
-      "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
+      "User-Agent": user_agent,
       "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
       "Accept-Language": "en-US,en;q=0.5",
       "Accept-Encoding": "gzip, deflate, br",
@@ -195,7 +197,7 @@ if debug_mode:print('random sleep for',sleeping_delay,'seconds...')
 sleep(sleeping_delay)
 
 request_4_headers = {
-    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
+    "User-Agent": user_agent,
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.5",
     "Accept-Encoding": "gzip, deflate, br",
@@ -235,7 +237,7 @@ if debug_mode:
 
 request_5_url = "https://myaccount.esbnetworks.ie"
 request_5_headers = {
-    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
+    "User-Agent": user_agent,
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.5",
     "Accept-Encoding": "gzip, deflate, br",
@@ -284,7 +286,7 @@ request_6_cookies = {
     ".AspNetCore.Cookies":asp_net_core_cookie,
 }
 request_6_headers = {
-    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
+    "User-Agent": user_agent,
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.5",
     "Accept-Encoding": "gzip, deflate, br",
@@ -321,7 +323,7 @@ sleep(sleeping_delay)
 
 request_7_url = "https://myaccount.esbnetworks.ie/af/t"
 request_7_headers = {
-    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
+    "User-Agent": user_agent,
     "Accept": "*/*",
     "Accept-Language": "en-US,en;q=0.5",
     "Accept-Encoding": "gzip, deflate, br",
@@ -351,7 +353,7 @@ if debug_mode:
     print("##### REQUEST 8 -- GET [/DataHub/DownloadHdfPeriodic] ######")
 request_8_url = "https://myaccount.esbnetworks.ie/DataHub/DownloadHdfPeriodic"
 request_8_headers = {
-    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
+    "User-Agent": user_agent,
     "Accept": "*/*",
     "Accept-Language": "en-US,en;q=0.5",
     "Accept-Encoding": "gzip, deflate, br",
